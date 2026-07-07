@@ -459,84 +459,116 @@ html { scrollbar-color: var(--charcoal-light) var(--black); scrollbar-width: thi
     .hero-furniture-rush { display: none; }
 }
 
-/* Clientele Marquee */
+/* ═══════ Clientele — Premium Showcase ═══════ */
 .clientele {
+    position: relative;
     background-color: var(--charcoal);
-    padding: 4rem 0;
+    padding: 5rem 0 4rem;
     border-top: 1px solid var(--charcoal-light);
     border-bottom: 1px solid var(--charcoal-light);
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
+.clientele::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(227,83,54,0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
 
+/* ── Header ── */
 .clientele-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
 }
-
 .clientele-header p {
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-size: 0.9rem;
-    color: var(--concrete);
+    max-width: 500px;
+    margin: 0 auto;
 }
 
+/* ── Dual-row marquee wrapper ── */
+.marquee-scroll {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    z-index: 1;
+}
+.marquee-row {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+}
 .marquee-track {
     display: flex;
-    gap: 2rem;
+    gap: 1.25rem;
+    width: max-content;
     white-space: nowrap;
-    animation: marquee 30s linear infinite;
 }
-
-.marquee-track:hover {
+.marquee-track--a {
+    animation: marqueeRight 35s linear infinite;
+}
+.marquee-track--b {
+    animation: marqueeLeft 40s linear infinite;
+}
+.marquee-row:hover .marquee-track--a,
+.marquee-row:hover .marquee-track--b {
     animation-play-state: paused;
 }
 
+/* ── Client Badge ── */
 .client-badge {
     display: inline-flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem 2rem;
+    gap: 0.75rem;
+    padding: 0.65rem 1.5rem;
     background: var(--charcoal-light);
-    border: 1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid transparent;
     border-radius: 50px;
-    color: var(--concrete);
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    transition: all 0.3s ease;
-    cursor: default;
-}
-
-.client-badge:hover {
     color: var(--warm-white);
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: default;
+    flex-shrink: 0;
+}
+.client-badge:hover {
     border-color: var(--brick);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    background: var(--charcoal-light);
 }
 
-.badge-icon {
-    width: 24px;
-    height: 24px;
-    background: var(--brick);
-    border-radius: 50%;
-    opacity: 0.8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* ── Client Category ── */
+.client-category {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--concrete);
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+    border-left: 1px solid var(--concrete);
+    opacity: 0.5;
+}
+.client-badge:hover .client-category {
+    opacity: 1;
 }
 
-.badge-icon::after {
-    content: '';
-    width: 8px;
-    height: 8px;
-    background: var(--black);
-    border-radius: 50%;
-}
-
-@keyframes marquee {
+/* ── Marquee Keyframes ── */
+@keyframes marqueeRight {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+}
+@keyframes marqueeLeft {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
 }
 
 /* Categories Grid */
@@ -1707,8 +1739,10 @@ footer {
     section { padding: 5rem 0; }
     .categories-grid { grid-template-columns: 1fr; }
     .footer-content { flex-direction: column; text-align: center; }
-    .marquee-track { gap: 1rem; }
-    .client-badge { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
+    .clientele { padding: 3.5rem 0 3rem; }
+    .marquee-track { gap: 0.8rem; }
+    .client-badge { padding: 0.5rem 1rem; font-size: 0.85rem; }
+    .client-category { display: none; }
     .catalogue-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
 }
 @media (max-width: 480px) {
