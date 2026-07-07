@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Alegreya+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,400;1,500&display=swap');
+
 :root {
-    --brick: #A35E47;
-    --brick-dark: #824835;
-    --charcoal: #1a1a1a;
-    --charcoal-light: #2a2a2a;
-    --black: #0a0a0a;
-    --warm-white: #F5F2EE;
-    --concrete: #9C9A9A;
+    --brick: #E35336;
+    --brick-dark: #8A2B0E;
+    --charcoal: #5d2113;
+    --charcoal-light: #7a493d;
+    --black: #230b04;
+    --warm-white: #FFD3AC;
+    --concrete: #9988A1;
+    --btn-text: #230b04;
     --transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -16,7 +19,7 @@
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Alegreya Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: var(--black);
     color: var(--warm-white);
     line-height: 1.6;
@@ -26,6 +29,7 @@ body {
 
 /* Typography */
 h1, h2, h3, h4 {
+    font-family: 'Alegreya', Georgia, serif;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -58,7 +62,7 @@ a {
     align-items: center;
     gap: 0.75rem;
     background-color: var(--brick);
-    color: var(--warm-white);
+    color: var(--btn-text);
     padding: 1rem 2rem;
     font-size: 1rem;
     font-weight: 600;
@@ -187,7 +191,7 @@ html { scrollbar-color: var(--charcoal-light) var(--black); scrollbar-width: thi
     padding: 0.6rem 1.5rem;
     font-size: 0.8rem;
     background: var(--brick);
-    color: var(--warm-white);
+    color: var(--btn-text);
     border-radius: 0;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -300,7 +304,7 @@ html { scrollbar-color: var(--charcoal-light) var(--black); scrollbar-width: thi
     transform: translate(-50%, -50%);
     width: 60vw;
     height: 60vw;
-    background: radial-gradient(circle, rgba(163, 94, 71, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(227, 83, 54, 0.15) 0%, transparent 70%);
 }
 .hero-door {
     position: absolute;
@@ -374,6 +378,85 @@ html { scrollbar-color: var(--charcoal-light) var(--black); scrollbar-width: thi
 
 @keyframes fadeIn {
     to { opacity: 1; }
+}
+
+/* Furniture Rush Animation (right side of hero) */
+.hero-furniture-rush {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 320px;
+    height: 420px;
+    z-index: 3;
+    opacity: 0;
+    animation: rushFadeIn 0.6s ease 1.8s forwards;
+    pointer-events: none;
+}
+.hero-furniture-rush svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+
+/* Each furniture group starts hidden and pops in on its turn */
+.furniture-item { opacity: 0; }
+.furniture-item-1 { animation: itemPopIn 10s ease infinite; }
+.furniture-item-2 { animation: itemPopIn 10s ease 2s infinite; }
+.furniture-item-3 { animation: itemPopIn 10s ease 4s infinite; }
+.furniture-item-4 { animation: itemPopIn 10s ease 6s infinite; }
+.furniture-item-5 { animation: itemPopIn 10s ease 8s infinite; }
+
+/* Speed swooshes that streak across during transitions */
+.speed-swoosh {
+    opacity: 0;
+    transform-origin: left center;
+}
+.speed-swoosh-1 { animation: swooshStreak 10s ease infinite; }
+.speed-swoosh-2 { animation: swooshStreak 10s ease 2s infinite; }
+.speed-swoosh-3 { animation: swooshStreak 10s ease 4s infinite; }
+.speed-swoosh-4 { animation: swooshStreak 10s ease 6s infinite; }
+.speed-swoosh-5 { animation: swooshStreak 10s ease 8s infinite; }
+
+/* Particles that burst on transition */
+.rush-particle {
+    opacity: 0;
+}
+.rush-particle-1 { animation: particleBurst 10s ease infinite; }
+.rush-particle-2 { animation: particleBurst 10s ease 2s infinite; }
+.rush-particle-3 { animation: particleBurst 10s ease 4s infinite; }
+.rush-particle-4 { animation: particleBurst 10s ease 6s infinite; }
+.rush-particle-5 { animation: particleBurst 10s ease 8s infinite; }
+
+@keyframes rushFadeIn {
+    0% { opacity: 0; transform: translateY(-50%) translateX(20px); }
+    100% { opacity: 1; transform: translateY(-50%) translateX(0); }
+}
+
+@keyframes itemPopIn {
+    0% { opacity: 0; transform: scale(0.5) rotate(-8deg) translateX(40px); filter: blur(6px); }
+    4% { opacity: 1; transform: scale(1.05) rotate(1deg) translateX(0); filter: blur(0); }
+    8% { opacity: 1; transform: scale(1) rotate(0deg) translateX(0); filter: blur(0); }
+    16% { opacity: 1; transform: scale(1) rotate(0deg); }
+    20% { opacity: 0; transform: scale(0.8) rotate(5deg) translateX(-20px); filter: blur(4px); }
+    100% { opacity: 0; }
+}
+@keyframes swooshStreak {
+    0%, 3% { opacity: 0; transform: scaleX(0.3) translateX(-40px); }
+    4% { opacity: 0.6; transform: scaleX(1.2) translateX(0); }
+    6% { opacity: 0; transform: scaleX(1.5) translateX(40px); }
+    100% { opacity: 0; }
+}
+@keyframes particleBurst {
+    0%, 3% { opacity: 0; transform: translate(0, 0) scale(0); }
+    4% { opacity: 1; transform: translate(var(--dx), var(--dy)) scale(1); }
+    8% { opacity: 0; transform: translate(calc(var(--dx)*2), calc(var(--dy)*2)) scale(0); }
+    100% { opacity: 0; }
+}
+
+@media (max-width: 1100px) {
+    .hero-furniture-rush { display: none; }
 }
 
 /* Clientele Marquee */
@@ -857,7 +940,7 @@ html { scrollbar-color: var(--charcoal-light) var(--black); scrollbar-width: thi
     width: 30px;
     height: 30px;
     border: 1px solid var(--brick);
-    background: rgba(163, 94, 71, 0.1);
+    background: rgba(227, 83, 54, 0.1);
 }
 .shape1 { transform: translateZ(40px); }
 .shape2 { transform: rotateY(90deg) translateZ(40px); }
@@ -956,7 +1039,7 @@ html { scrollbar-color: var(--charcoal-light) var(--black); scrollbar-width: thi
     top: 1rem;
     right: 1rem;
     background: var(--brick);
-    color: var(--warm-white);
+    color: var(--btn-text);
     font-size: 0.75rem;
     font-weight: 600;
     padding: 0.3rem 0.8rem;
@@ -1115,11 +1198,177 @@ footer {
 .floating-wa svg {
     width: 30px;
     height: 30px;
-    fill: var(--warm-white);
+    fill: var(--btn-text);
 }
 @keyframes pulse {
     0% { transform: scale(1); opacity: 0.8; }
     100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* ─────────── THEME TOGGLE BUTTON ─────────── */
+.theme-toggle {
+    position: fixed;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--charcoal-light);
+    border: 1px solid var(--warm-white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.theme-toggle:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--warm-white);
+    fill: none;
+}
+
+/* ─────────── THEME PANEL ─────────── */
+.theme-panel {
+    position: fixed;
+    right: -320px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9998;
+    width: 280px;
+    background: var(--charcoal-light);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+    padding: 1.5rem;
+    transition: right 0.4s cubic-bezier(0.25,1,0.5,1);
+    pointer-events: none;
+}
+.theme-panel.open {
+    right: 0;
+    pointer-events: all;
+}
+.theme-panel-title {
+    font-family: 'Alegreya', Georgia, serif;
+    font-size: 0.85rem;
+    color: var(--warm-white);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+}
+.theme-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-bottom: 0.25rem;
+}
+.theme-option:hover,
+.theme-option.active {
+    background: rgba(255,255,255,0.06);
+}
+.theme-swatches {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;
+}
+.theme-swatches span {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    flex-shrink: 0;
+}
+.theme-name {
+    font-family: 'Alegreya Sans', system-ui, sans-serif;
+    font-size: 0.8rem;
+    color: var(--warm-white);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.theme-option.active .theme-name {
+    color: var(--brick);
+}
+.theme-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9997;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.theme-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Theme mode toggle */
+.theme-mode-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+.theme-mode-label {
+    font-family: 'Alegreya Sans', system-ui, sans-serif;
+    font-size: 0.7rem;
+    color: var(--warm-white);
+    opacity: 0.4;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    user-select: none;
+}
+.theme-mode-label.active {
+    opacity: 1;
+    color: var(--brick);
+}
+.theme-mode-switch {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background: var(--charcoal-light);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+}
+.theme-mode-switch.light {
+    background: var(--warm-white);
+}
+.theme-mode-switch.dark {
+    background: var(--black);
+}
+.theme-mode-knob {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--charcoal);
+    transition: transform 0.25s ease, background 0.2s ease;
+}
+.theme-mode-switch.dark .theme-mode-knob {
+    transform: translateX(20px);
 }
 
 /* ───────────────── 3D FLIP-BOOK OVERLAY ───────────────── */
@@ -1159,6 +1408,7 @@ footer {
 }
 .flipbook-close:hover {
     background: var(--brick);
+    color: var(--btn-text);
     transform: scale(1.1);
 }
 .flipbook-body {
@@ -1187,6 +1437,7 @@ footer {
 }
 .flipbook-nav:hover {
     background: var(--brick);
+    color: var(--btn-text);
     transform: scale(1.12);
 }
 .flipbook-nav:active {
@@ -1355,7 +1606,7 @@ footer {
 }
 .flipbook-info .fb-download:hover {
     background: var(--brick);
-    color: var(--warm-white);
+    color: var(--btn-text);
 }
 
 /* Click areas (tap left/right half to flip) */
@@ -1399,10 +1650,10 @@ footer {
     opacity: 1;
 }
 .flipbook-hit-left:hover::after {
-    background: rgba(163,94,71,0.3);
+    background: rgba(227,83,54,0.3);
 }
 .flipbook-hit-right:hover::after {
-    background: rgba(163,94,71,0.3);
+    background: rgba(227,83,54,0.3);
 }
 
 /* Mobile flipbook responsive */

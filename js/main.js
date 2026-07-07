@@ -90,10 +90,12 @@ class Particle {
         this.size = Math.random() * 2 + 0.5;
         this.speedX = Math.random() * 1 - 0.5;
         this.speedY = Math.random() * 1 - 0.5;
-        this.color = Math.random() > 0.5 ? '#A35E47' : '#9C9A9A';
-        this.opacity = Math.random() * 0.5 + 0.1;
-    }
-    update() {
+    const brick = getComputedStyle(document.documentElement).getPropertyValue('--brick').trim() || '#E35336';
+    const concrete = getComputedStyle(document.documentElement).getPropertyValue('--concrete').trim() || '#9988A1';
+    this.color = Math.random() > 0.5 ? brick : concrete;
+    this.opacity = Math.random() * 0.5 + 0.1;
+}
+update() {
         this.x += this.speedX;
         this.y += this.speedY;
         if (this.x > width) this.x = 0;
@@ -427,4 +429,88 @@ document.addEventListener('keydown', (e) => {
 fbOverlay.addEventListener('click', (e) => {
     if (e.target === fbOverlay) closeFlipbook();
 });
+
+// ══════════════════════════════════════════════════════════════════
+// 8. Theme Switcher
+// ══════════════════════════════════════════════════════════════════
+(function() {
+    const themes = [
+        { id: 'tuscan-sunset', name: 'Tuscan Sunset', colors: ['#E35336','#FFD3AC','#9988A1','#8A2B0E'] },
+        { id: 'chilli-spice', name: 'Chilli Spice', colors: ['#CD1C18','#FFA896','#9B1313','#38000A'] },
+        { id: 'chocolate-truffle', name: 'Chocolate Truffle', colors: ['#C05800','#FDFBD4','#713600','#38240D'] },
+        { id: 'golder-taupe', name: 'Golder Taupe', colors: ['#D4AF37','#BDB76B','#FDFBD4','#CE8946'] },
+        { id: 'burn-sienna', name: 'Burn Sienna', colors: ['#E35336','#F5F5DC','#F4A460','#A0522D'] },
+        { id: 'quiet-luxury', name: 'Quiet Luxury', colors: ['#F7E6CA','#E8D59E','#D9BBB0','#AD9C8E'] },
+        { id: 'night-sands', name: 'Night Sands', colors: ['#CBBD93','#FAE8B4','#80775C','#574A24'] }
+    ];
+
+    const themeLink = document.getElementById('theme-css');
+    const toggle = document.getElementById('theme-toggle');
+    const panel = document.getElementById('theme-panel');
+    const overlay = document.getElementById('theme-overlay');
+    const list = document.getElementById('theme-list');
+    const modeSwitch = document.getElementById('theme-mode-switch');
+    const modeLabels = document.querySelectorAll('.theme-mode-label');
+    let currentTheme = 'tuscan-sunset';
+    let currentMode = localStorage.getItem('mpgs-theme-mode') || 'dark';
+
+    function applyTheme(id, mode) {
+        const suffix = mode === 'light' ? '-light' : '';
+        themeLink.href = 'themes/' + id + suffix + '.css';
+        currentTheme = id;
+        currentMode = mode;
+        localStorage.setItem('mpgs-theme', id);
+        localStorage.setItem('mpgs-theme-mode', mode);
+        document.querySelectorAll('.theme-option').forEach(el => {
+            el.classList.toggle('active', el.dataset.theme === id);
+        });
+        modeSwitch.className = 'theme-mode-switch ' + mode;
+        modeLabels.forEach(l => {
+            l.classList.toggle('active', l.dataset.mode === mode);
+        });
+    }
+
+    function setMode(mode) {
+        applyTheme(currentTheme, mode);
+    }
+
+    // Build theme list
+    themes.forEach(t => {
+        const div = document.createElement('div');
+        div.className = 'theme-option';
+        div.dataset.theme = t.id;
+        const swatches = t.colors.map(c => '<span style="background:' + c + '"></span>').join('');
+        div.innerHTML = '<div class="theme-swatches">' + swatches + '</div><span class="theme-name">' + t.name + '</span>';
+        div.addEventListener('click', () => { applyTheme(t.id, currentMode); closePanel(); });
+        list.appendChild(div);
+    });
+
+    // Mode toggle
+    modeSwitch.addEventListener('click', () => {
+        setMode(currentMode === 'light' ? 'dark' : 'light');
+    });
+    modeLabels.forEach(l => {
+        l.addEventListener('click', () => setMode(l.dataset.mode));
+    });
+
+    function openPanel() { panel.classList.add('open'); overlay.classList.add('open'); }
+    function closePanel() { panel.classList.remove('open'); overlay.classList.remove('open'); }
+
+    toggle.addEventListener('click', () => {
+        if (panel.classList.contains('open')) closePanel();
+        else openPanel();
+    });
+    overlay.addEventListener('click', closePanel);
+
+    // Restore saved theme
+    const saved = localStorage.getItem('mpgs-theme');
+    const savedMode = localStorage.getItem('mpgs-theme-mode') || 'dark';
+    if (saved && themes.some(t => t.id === saved)) {
+        applyTheme(saved, savedMode);
+    } else {
+        applyTheme('tuscan-sunset', 'dark');
+    }
+})();
+
+
 
