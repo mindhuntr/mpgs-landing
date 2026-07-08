@@ -2,25 +2,25 @@
 
 :root {
     /* Design System — M3-inspired light/cream palette */
-    --background: #fbf9f4;
-    --on-background: #1c1b1a;
-    --gold-muted: #b8a99a;
-    --surface-variant: #efece5;
-    --on-surface-variant: #4f453c;
-    --surface-container-low: #f5f3ee;
-    --surface-container: #efede8;
-    --surface-container-high: #e9e7e2;
-    --surface-container-highest: #e3e2dd;
-    --surface-container-lowest: #ffffff;
-    --outline-variant: #d0c5b9;
-    --outline: #817568;
-    --on-surface: #1c1b1a;
-    --primary: #77593c;
+    --background: #ede7d9;
+    --on-background: #17140f;
+    --gold-muted: #8a7358;
+    --surface-variant: #ddd4c0;
+    --on-surface-variant: #362d24;
+    --surface-container-low: #e6e0d0;
+    --surface-container: #ddd6c4;
+    --surface-container-high: #d3cbb6;
+    --surface-container-highest: #c8bfa7;
+    --surface-container-lowest: #fdfcf8;
+    --outline-variant: #b3a487;
+    --outline: #55483a;
+    --on-surface: #17140f;
+    --primary: #4f3a26;
     --on-primary: #ffffff;
-    --secondary: #6a5c4d;
-    --tertiary: #5a624d;
-    --charcoal-deep: #1c1b1a;
-    --btn-text: #1c1b1a;
+    --secondary: #46392b;
+    --tertiary: #3a4030;
+    --charcoal-deep: #17140f;
+    --btn-text: #17140f;
     --transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 
     /* Layout */
