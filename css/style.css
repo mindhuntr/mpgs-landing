@@ -122,6 +122,27 @@ a {
     margin-bottom: 0;
 }
 
+/* ── Skip Link ── */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    z-index: 10000;
+    padding: 10px 20px;
+    background: var(--accent);
+    color: var(--bg);
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
 /* ── Material Tags ── */
 .tag {
     display: inline-flex;
@@ -131,7 +152,7 @@ a {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.09em;
-    border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+    border: 1px solid var(--accent);
     padding: 5px 11px;
     border-radius: 2px;
     color: var(--accent);
@@ -159,20 +180,20 @@ a {
     transform: translateY(-1px);
 }
 .btn-primary {
-    background: var(--accent);
-    color: var(--bg);
-    border-color: var(--accent);
+    background: var(--btn-primary);
+    color: var(--btn-primary-text);
+    border-color: var(--btn-primary);
 }
 .btn-primary:hover {
     opacity: 0.9;
 }
 .btn-outline {
-    border-color: color-mix(in srgb, var(--text) 28%, transparent);
-    color: var(--text);
+    border-color: var(--btn-outline);
+    color: var(--btn-outline);
 }
 .btn-outline:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--btn-primary);
+    color: var(--btn-primary);
 }
 .btn svg {
     width: 16px;
@@ -1522,6 +1543,45 @@ footer {
         width: 36px;
         height: 36px;
         font-size: 1.1rem;
+    }
+}
+
+/* ── Focus Visible ── */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .reveal, .reveal-left, .reveal-right, .reveal-scale,
+    .stagger-text span, .stagger-text p,
+    .card, .hero-doorway, .hero-furniture-rush {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* ── Theme Switcher Mobile ── */
+@media (max-width: 768px) {
+    #theme-switcher {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px 0;
+        margin-top: 8px;
+        border-top: 1px solid var(--surface);
+    }
+    #theme-switcher .theme-dot {
+        width: 20px;
+        height: 20px;
     }
 }
 

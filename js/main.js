@@ -33,7 +33,7 @@ function initThemeUI() {
         const dot = document.createElement('button');
         dot.className = 'theme-dot';
         dot.dataset.theme = t.id;
-        dot.setAttribute('aria-label', t.name);
+        dot.setAttribute('aria-label', `Switch to ${t.name} theme`);
         dot.style.background = t.variables['--accent'];
         dot.title = t.name;
         switcher.appendChild(dot);
@@ -80,9 +80,12 @@ document.querySelectorAll('.header-nav a[href^="#"]').forEach(link => {
 });
 
 // Mobile nav toggle
+navToggle.setAttribute('aria-expanded', 'false');
 navToggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
+    const isOpen = nav.classList.toggle('open');
     navToggle.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+    navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Menu');
 });
 
 // Init theme system

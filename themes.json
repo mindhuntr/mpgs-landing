@@ -8,6 +8,9 @@
         "--bg": "#1E1B18",
         "--text": "#EDE7D9",
         "--accent": "#A9803F",
+        "--btn-primary": "#A9803F",
+        "--btn-primary-text": "#1E1B18",
+        "--btn-outline": "#A9803F",
         "--text-secondary": "#ADA48F",
         "--surface": "#2A2621",
         "--section-alt": "#131110"
@@ -21,6 +24,9 @@
         "--bg": "#F5F0EB",
         "--text": "#2D2A24",
         "--accent": "#7A3826",
+        "--btn-primary": "#7A3826",
+        "--btn-primary-text": "#F5F0EB",
+        "--btn-outline": "#2D2A24",
         "--text-secondary": "#8A7E6F",
         "--surface": "#E8E2D8",
         "--section-alt": "#DED5CA"
@@ -34,6 +40,9 @@
         "--bg": "#1A2F2A",
         "--text": "#E8E0D0",
         "--accent": "#CBA968",
+        "--btn-primary": "#CBA968",
+        "--btn-primary-text": "#1A2F2A",
+        "--btn-outline": "#CBA968",
         "--text-secondary": "#9A9A8A",
         "--surface": "#243B35",
         "--section-alt": "#1A2F2A"
@@ -47,6 +56,9 @@
         "--bg": "#1A1F2E",
         "--text": "#E0DED8",
         "--accent": "#8B9DC3",
+        "--btn-primary": "#8B9DC3",
+        "--btn-primary-text": "#1A1F2E",
+        "--btn-outline": "#8B9DC3",
         "--text-secondary": "#8A8E9A",
         "--surface": "#242A3A",
         "--section-alt": "#161A28"
@@ -60,6 +72,9 @@
         "--bg": "#F0EDE6",
         "--text": "#3A3530",
         "--accent": "#A67C52",
+        "--btn-primary": "#A67C52",
+        "--btn-primary-text": "#F0EDE6",
+        "--btn-outline": "#3A3530",
         "--text-secondary": "#9A9080",
         "--surface": "#E5E0D6",
         "--section-alt": "#DAD3C8"
@@ -73,6 +88,9 @@
         "--bg": "#F8F6F2",
         "--text": "#1E1B18",
         "--accent": "#2A2A28",
+        "--btn-primary": "#2A2A28",
+        "--btn-primary-text": "#F8F6F2",
+        "--btn-outline": "#1E1B18",
         "--text-secondary": "#7A7A74",
         "--surface": "#EEEAE4",
         "--section-alt": "#E4E0DA"
@@ -86,6 +104,9 @@
         "--bg": "#131110",
         "--text": "#DDD5C7",
         "--accent": "#A9803F",
+        "--btn-primary": "#A9803F",
+        "--btn-primary-text": "#131110",
+        "--btn-outline": "#A9803F",
         "--text-secondary": "#ADA48F",
         "--surface": "#1E1B18",
         "--section-alt": "#0D0C0B"
@@ -99,6 +120,9 @@
         "--bg": "#1E2420",
         "--text": "#EBE5D8",
         "--accent": "#CBA968",
+        "--btn-primary": "#CBA968",
+        "--btn-primary-text": "#1E2420",
+        "--btn-outline": "#CBA968",
         "--text-secondary": "#A0A090",
         "--surface": "#2A322E",
         "--section-alt": "#181E1A"
@@ -112,6 +136,9 @@
         "--bg": "#F0E6DE",
         "--text": "#3A2A24",
         "--accent": "#C4694A",
+        "--btn-primary": "#C4694A",
+        "--btn-primary-text": "#F0E6DE",
+        "--btn-outline": "#3A2A24",
         "--text-secondary": "#9A8A7E",
         "--surface": "#E4D8CE",
         "--section-alt": "#DACCC0"
