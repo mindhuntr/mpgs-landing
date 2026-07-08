@@ -255,6 +255,7 @@ html { scrollbar-color: var(--charcoal-light) var(--black); scrollbar-width: thi
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     overflow: hidden;
     padding: 0;
 }
@@ -267,6 +268,10 @@ html { scrollbar-color: var(--charcoal-light) var(--black); scrollbar-width: thi
     height: 100%;
     z-index: 0;
     opacity: 0.6;
+}
+
+.hero .container {
+    margin: 5rem
 }
 
 .hero-content {
@@ -383,7 +388,7 @@ html { scrollbar-color: var(--charcoal-light) var(--black); scrollbar-width: thi
 /* Furniture Rush Animation (right side of hero) */
 .hero-furniture-rush {
     position: absolute;
-    right: 4%;
+    right: 12%;
     top: 50%;
     transform: translateY(-50%);
     width: 320px;
