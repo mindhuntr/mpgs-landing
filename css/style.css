@@ -6,6 +6,7 @@
     --accent: #5E3023;
     --text-secondary: #C08552;
     --surface: #E0D6CA;
+    --section-alt: #D5C8B5;
     --transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 
     /* Layout */
@@ -320,7 +321,7 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
 /* Hero Section */
 .hero {
     position: relative;
-    /* background-color: var(--bg); */
+    background-color: var(--bg);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -542,7 +543,7 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
 /* ═══════ Clientele — Premium Showcase ═══════ */
 .clientele {
     position: relative;
-    background-color: var(--bg);
+    background-color: var(--section-alt);
     padding: var(--section-gap-desktop) 0;
     border-top: 1px solid var(--surface);
     border-bottom: 1px solid var(--surface);
@@ -649,6 +650,7 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
 
 /* Collections Section */
 .collections {
+    
     border-top: 1px solid var(--surface);
     padding: 2rem 0 var(--section-gap-desktop) 0;
 }
@@ -752,7 +754,7 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
 .catalogue {
     text-align: center;
     padding: var(--section-gap-desktop) 0;
-    background-color: var(--surface);
+    background-color: var(--section-alt);
     border-top: 1px solid var(--surface);
     border-bottom: 1px solid var(--surface);
 }
@@ -930,7 +932,7 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
 
 /* Footer */
 footer {
-    background-color: var(--surface);
+    background-color: var(--section-alt);
     padding: 3rem 0 2rem;
     border-top: 1px solid var(--surface);
 }
