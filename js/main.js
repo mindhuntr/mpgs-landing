@@ -1,3 +1,51 @@
+let themeData = null;
+
+async function loadThemes() {
+    try {
+        const res = await fetch('themes.json');
+        themeData = await res.json();
+        initThemeUI();
+    } catch (e) {
+        console.warn('Failed to load themes.json, using defaults');
+    }
+}
+
+function applyTheme(themeId) {
+    if (!themeData) return;
+    const theme = themeData.themes.find(t => t.id === themeId);
+    if (!theme) return;
+    const root = document.documentElement;
+    Object.entries(theme.variables).forEach(([key, value]) => {
+        root.style.setProperty(key, value);
+    });
+    document.body.dataset.themeType = theme.type || 'light';
+    document.querySelectorAll('.theme-dot').forEach(dot => {
+        dot.classList.toggle('active', dot.dataset.theme === themeId);
+    });
+    localStorage.setItem('mpgs-theme', themeId);
+}
+
+function initThemeUI() {
+    if (!themeData) return;
+    const switcher = document.getElementById('theme-switcher');
+    if (!switcher) return;
+    themeData.themes.forEach(t => {
+        const dot = document.createElement('button');
+        dot.className = 'theme-dot';
+        dot.dataset.theme = t.id;
+        dot.setAttribute('aria-label', t.name);
+        dot.style.background = t.variables['--accent'];
+        dot.title = t.name;
+        switcher.appendChild(dot);
+    });
+    const saved = localStorage.getItem('mpgs-theme') || themeData.themes[0].id;
+    switcher.addEventListener('click', e => {
+        const dot = e.target.closest('.theme-dot');
+        if (dot) applyTheme(dot.dataset.theme);
+    });
+    applyTheme(saved);
+}
+
 // 0. Header scroll, progress bar, mobile nav
 const header = document.getElementById('header');
 const progress = document.getElementById('scroll-progress');
@@ -37,8 +85,11 @@ navToggle.addEventListener('click', () => {
     navToggle.classList.toggle('open');
 });
 
+// Init theme system
+loadThemes();
+
 // 1. Staggered Text Reveal for Hero
-const titleText = "Modern Furniture For All";
+const titleText = "Industrial in spirit. Timeless in form.";
 const titleEl = document.getElementById('hero-title');
 const words = titleText.split(' ');
 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap');
 
 :root {
     --bg: #F3E9DC;
@@ -39,9 +39,9 @@ body {
 
 /* Typography */
 h1, h2, h3, h4 {
-    font-family: 'EB Garamond', Georgia, serif;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
 }
 
 h1 {
@@ -55,8 +55,6 @@ h2 {
     font-size: clamp(1.8rem, 4vw, 3rem);
     margin-bottom: 1rem;
     color: var(--text);
-    font-weight: 400;
-    letter-spacing: 0.03em;
 }
 
 h3, h4 {
@@ -72,18 +70,7 @@ section h2 + p {
     font-size: 1.2rem;
     line-height: 1.7;
     margin-bottom: 3rem;
-    white-space: nowrap;
-    overflow: hidden;
     color: var(--text-secondary);
-}
-
-.collections h2,
-.collections h2 + p,
-.catalogue h2,
-.catalogue h2 + p,
-.contact h2,
-.contact h2 + p {
-    text-align: center;
 }
 
 a {
@@ -91,42 +78,111 @@ a {
     color: inherit;
 }
 
-/* Buttons — transparent with gold-muted border (bento style) */
+/* ── Editorial Eyebrow ── */
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+.eyebrow::before {
+    content: '';
+    width: 16px;
+    height: 1px;
+    background: currentColor;
+}
+
+/* ── Section Head (editorial spread) ── */
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+.section-head h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    max-width: 30rem;
+    text-transform: none;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: 0;
+}
+.section-head .desc {
+    max-width: 22rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* ── Material Tags ── */
+.tag {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+    padding: 5px 11px;
+    border-radius: 2px;
+    color: var(--accent);
+}
+
+/* ── Buttons ── */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
-    background: transparent;
-    color: var(--accent);
-    padding: 1rem 2rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
     font-family: 'Hanken Grotesk', sans-serif;
-    border: 1px solid var(--accent);
-    border-radius: var(--radius-md);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 15px 26px;
+    border-radius: 2px;
+    border: 1px solid transparent;
     cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
     text-decoration: none;
 }
-
 .btn:hover {
+    transform: translateY(-1px);
+}
+.btn-primary {
     background: var(--accent);
     color: var(--bg);
-    transform: translateY(-2px);
+    border-color: var(--accent);
 }
-
+.btn-primary:hover {
+    opacity: 0.9;
+}
+.btn-outline {
+    border-color: color-mix(in srgb, var(--text) 28%, transparent);
+    color: var(--text);
+}
+.btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
 .btn svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-    transition: transform 0.3s ease;
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    transition: transform 0.15s ease;
 }
-
 .btn:hover svg {
-    transform: translateX(5px);
+    transform: translateX(3px);
 }
 
 /* Layout */
@@ -213,7 +269,7 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
     letter-spacing: 0.15em;
     color: var(--text);
     text-decoration: none;
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: 'Fraunces', Georgia, serif;
 }
 .header-logo span { color: var(--accent); }
 .header-nav {
@@ -261,6 +317,45 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
 }
 .header-cta:hover { background: var(--accent); color: var(--bg); }
 .header-cta svg { flex-shrink: 0; }
+
+/* ── Theme Switcher Dots ── */
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 0.5rem;
+    border-left: 1px solid var(--surface);
+    border-right: 1px solid var(--surface);
+}
+.theme-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    flex-shrink: 0;
+}
+.theme-dot:hover {
+    transform: scale(1.3);
+}
+.theme-dot.active {
+    border-color: var(--text);
+    box-shadow: 0 0 0 1px var(--bg), 0 0 0 2px var(--text);
+}
+@media (max-width: 768px) {
+    .theme-switcher {
+        border: none;
+        padding: 0.5rem 0;
+        justify-content: center;
+        gap: 10px;
+    }
+    .theme-dot {
+        width: 20px;
+        height: 20px;
+    }
+}
 
 /* Mobile Nav Toggle */
 .nav-toggle {
@@ -331,6 +426,31 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
     padding: 64px var(--margin-desktop) 0 var(--margin-desktop);
 }
 
+.hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.045) 0, rgba(0,0,0,0.045) 1px, transparent 1px, transparent 56px),
+        repeating-linear-gradient(90deg, rgba(0,0,0,0.045) 0, rgba(0,0,0,0.045) 1px, transparent 1px, transparent 56px);
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 40%, transparent 90%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 40%, transparent 90%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.crop {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    z-index: 1;
+    pointer-events: none;
+}
+.crop-tl { top: 30px; left: 30px; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); }
+.crop-tr { top: 30px; right: 30px; border-top: 1px solid var(--accent); border-right: 1px solid var(--accent); }
+.crop-bl { bottom: 30px; left: 30px; border-bottom: 1px solid var(--accent); border-left: 1px solid var(--accent); }
+.crop-br { bottom: 30px; right: 30px; border-bottom: 1px solid var(--accent); border-right: 1px solid var(--accent); }
+@media (max-width: 640px) { .crop { display: none; } }
+
 #hero-canvas {
     position: absolute;
     top: 0;
@@ -351,6 +471,21 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
     position: relative;
     z-index: 2;
     max-width: min(50vw, 700px);
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1.75rem;
+}
+
+.hero-cta {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
 }
 
 /* Hero Doorway Animation */
@@ -444,17 +579,24 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
 }
 
 .hero-subtitle {
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
     color: var(--text-secondary);
-    margin-bottom: 3rem;
-    max-width: 600px;
+    margin-bottom: 2.5rem;
+    max-width: 34rem;
     opacity: 0;
     animation: fadeIn 1s ease 2.5s forwards;
+    font-weight: 300;
+    line-height: 1.6;
 }
 
-.hero .btn {
+.hero .btn-primary {
     opacity: 0;
     animation: fadeIn 1s ease 2.7s forwards;
+}
+
+.hero .btn-outline {
+    opacity: 0;
+    animation: fadeIn 1s ease 2.9s forwards;
 }
 
 @keyframes fadeIn {
@@ -673,7 +815,7 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 2.5rem;
+    padding: 2rem 2.5rem;
     cursor: pointer;
     text-decoration: none;
     transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
@@ -684,6 +826,37 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
     transform: translateY(-4px);
 }
 
+.coll-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+.coll-icon {
+    width: 54px;
+    height: 40px;
+    color: var(--text-secondary);
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: color 0.2s ease;
+}
+.card:hover .coll-icon {
+    color: var(--accent);
+}
+.coll-code {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 11px;
+    color: var(--text-secondary);
+    background: color-mix(in srgb, var(--text) 10%, transparent);
+    padding: 4px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+}
+
 .card-content {
     position: relative;
     z-index: 2;
@@ -691,38 +864,26 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
 }
 
 .card h3 {
-    font-size: 2rem;
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
     transition: transform 0.3s ease;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-transform: none;
 }
 
 .card p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+    margin: 0;
+    font-size: 0.92rem;
     color: var(--text-secondary);
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-.card-icon {
-    position: absolute;
-    top: 2.5rem;
-    right: 2.5rem;
-    width: 60px;
-    height: 60px;
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
-    z-index: 2;
-}
-
-.card:hover .card-icon {
+    flex-grow: 1;
     opacity: 1;
 }
 
 .card-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 6px;
     color: var(--accent);
     font-weight: 600;
     text-transform: uppercase;
@@ -848,7 +1009,7 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
     gap: 0.75rem;
 }
 .cat-info h4 {
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: 'Fraunces', Georgia, serif;
     font-size: 1.05rem;
     color: var(--text);
     text-transform: uppercase;
@@ -903,7 +1064,7 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: 'Fraunces', Georgia, serif;
     font-size: clamp(20rem, 40vw, 50rem);
     font-weight: 700;
     color: var(--accent);
@@ -933,49 +1094,67 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
 /* Footer */
 footer {
     background-color: var(--section-alt);
-    padding: 3rem 0 2rem;
+    padding: 4rem 0 2rem;
     border-top: 1px solid var(--surface);
 }
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 2rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--surface);
 }
 .footer-brand {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 500;
     color: var(--text);
+    letter-spacing: 0.02em;
+    display: block;
+    margin-bottom: 0.9rem;
 }
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+.footer-desc {
+    max-width: 22rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
 }
-.footer-links a {
-    color: var(--text);
+.foot-col h4 {
     font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    transition: color 0.3s ease;
+    letter-spacing: 0.1em;
+    color: var(--text);
+    margin: 0 0 1rem;
+    font-weight: 500;
 }
-.footer-links a:hover {
+.foot-col a {
+    display: block;
+    font-size: 0.92rem;
+    padding: 6px 0;
+    color: var(--text-secondary);
+    transition: color 0.15s ease;
+    text-decoration: none;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+.foot-col a:hover {
     color: var(--accent);
 }
 .footer-bottom {
-    text-align: center;
-    color: var(--text);
-    font-size: 0.85rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--surface);
-    font-family: 'Hanken Grotesk', sans-serif;
-    opacity: 0.6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.75rem;
+    font-size: 0.82rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+@media (max-width: 720px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Floating WhatsApp */
@@ -1016,172 +1195,6 @@ footer {
 @keyframes pulse {
     0% { transform: scale(1); opacity: 0.8; }
     100% { transform: scale(1.5); opacity: 0; }
-}
-
-/* ─────────── THEME TOGGLE BUTTON ─────────── */
-.theme-toggle {
-    position: fixed;
-    right: 18px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 9999;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--surface);
-    border: 1px solid var(--surface);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.7;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.theme-toggle:hover {
-    opacity: 1;
-    transform: translateY(-50%) scale(1.1);
-}
-.theme-toggle svg {
-    width: 20px;
-    height: 20px;
-    stroke: var(--text);
-    fill: none;
-}
-
-/* ─────────── THEME PANEL ─────────── */
-.theme-panel {
-    position: fixed;
-    right: -320px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 9998;
-    width: 280px;
-    background: var(--surface);
-    border: 1px solid var(--surface);
-    border-right: none;
-    border-radius: 12px 0 0 12px;
-    padding: 1.5rem;
-    transition: right 0.4s cubic-bezier(0.25,1,0.5,1);
-    pointer-events: none;
-}
-.theme-panel.open {
-    right: 0;
-    pointer-events: all;
-}
-.theme-panel-title {
-    font-family: 'EB Garamond', Georgia, serif;
-    font-size: 0.85rem;
-    color: var(--text);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 1.25rem;
-    font-weight: 700;
-}
-.theme-option {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.6rem 0.75rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-    margin-bottom: 0.25rem;
-}
-.theme-option:hover,
-.theme-option.active {
-    background: var(--surface);
-}
-.theme-swatches {
-    display: flex;
-    gap: 5px;
-    flex-shrink: 0;
-}
-.theme-swatches span {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    border: 1px solid var(--surface);
-    flex-shrink: 0;
-}
-.theme-name {
-    font-family: 'Hanken Grotesk', system-ui, sans-serif;
-    font-size: 0.8rem;
-    color: var(--text);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 500;
-    white-space: nowrap;
-}
-.theme-option.active .theme-name {
-    color: var(--accent);
-}
-.theme-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 9997;
-    background: rgba(0,0,0,0.2);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-.theme-overlay.open {
-    opacity: 1;
-    pointer-events: all;
-}
-
-/* Theme mode toggle */
-.theme-mode-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    margin-top: 1.25rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--surface);
-}
-.theme-mode-label {
-    font-family: 'Hanken Grotesk', system-ui, sans-serif;
-    font-size: 0.7rem;
-    color: var(--text);
-    opacity: 0.4;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
-    user-select: none;
-}
-.theme-mode-label.active {
-    opacity: 1;
-    color: var(--accent);
-}
-.theme-mode-switch {
-    position: relative;
-    width: 40px;
-    height: 20px;
-    background: var(--surface);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-    flex-shrink: 0;
-}
-.theme-mode-switch.light {
-    background: var(--surface);
-}
-.theme-mode-switch.dark {
-    background: var(--text);
-}
-.theme-mode-knob {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: var(--bg);
-    transition: transform 0.25s ease, background 0.2s ease;
-}
-.theme-mode-switch.dark .theme-mode-knob {
-    transform: translateX(20px);
 }
 
 /* ───────────────── 3D FLIP-BOOK OVERLAY ───────────────── */
@@ -1549,13 +1562,16 @@ footer {
     }
     .categories-grid { grid-template-columns: 1fr; }
     .collections .categories-grid { grid-template-columns: 1fr; }
-    .footer-content { flex-direction: column; align-items: center; text-align: center; }
     .clientele { padding: var(--section-gap-mobile) 0; }
     .marquee-track { gap: 0.8rem; }
     .client-badge { padding: 0.5rem 1rem; font-size: 0.85rem; }
     .client-category { display: none; }
     .catalogue-grid { grid-template-columns: 1fr; gap: var(--gutter); }
     .catalogue-grid-wide { grid-template-columns: 1fr; gap: var(--gutter); }
+    .hero-tags { justify-content: center; }
+    .hero-cta { justify-content: center; }
+    .section-head { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .section-head .desc { max-width: 100%; }
 }
 @media (max-width: 480px) {
     .header { padding: 1rem; }

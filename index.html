@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPGS | Furniture For All</title>
+    <title>MPGS — Premium Industrial Furniture</title>
     <meta name="description" content="Premium modern industrial furniture. Living room, bedroom, dining, office, and outdoor collections.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="texture-linen">
@@ -20,6 +23,7 @@
             <a href="#catalogue">Catalogue</a>
             <a href="#clientele">Clientele</a>
             <a href="#contact">Contact</a>
+            <div class="theme-switcher" id="theme-switcher"></div>
             <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20would%20like%20to%20get%20a%20price%20estimate%20for%20your%20furniture." class="header-cta" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                 Get a Price
@@ -41,7 +45,12 @@
     <main>
     <!-- Hero Section -->
     <section class="hero" id="hero">
+        <div class="hero-grid" aria-hidden="true"></div>
         <canvas id="hero-canvas"></canvas>
+        <span class="crop crop-tl" aria-hidden="true"></span>
+        <span class="crop crop-tr" aria-hidden="true"></span>
+        <span class="crop crop-bl" aria-hidden="true"></span>
+        <span class="crop crop-br" aria-hidden="true"></span>
         <div class="hero-doorway">
             <div class="hero-room">
                 <div class="hero-room-glow"></div>
@@ -51,7 +60,6 @@
         </div>
         <div class="hero-furniture-rush" id="hero-furniture-rush">
             <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- ── SPEED SWOOSHES ── -->
                 <g class="speed-swoosh speed-swoosh-1">
                     <path d="M-20 260 L440 220" style="stroke: var(--text); stroke-width: 2; opacity: 0.3"/>
                     <path d="M-20 270 L440 230" style="stroke: var(--accent); stroke-width: 1; opacity: 0.2"/>
@@ -72,8 +80,6 @@
                     <path d="M-20 260 L440 220" stroke="#E9C46A" stroke-width="2" opacity="0.3"/>
                     <path d="M-20 270 L440 230" style="stroke: var(--accent); stroke-width: 1; opacity: 0.2"/>
                 </g>
-
-                <!-- ── PARTICLE BURST ── -->
                 <g class="rush-particle rush-particle-1" style="--dx:-25px;--dy:-30px;">
                     <circle cx="200" cy="260" r="3" style="fill: var(--text)"/>
                 </g>
@@ -98,8 +104,6 @@
                 <g class="rush-particle rush-particle-5" style="--dx:26px;--dy:-22px;">
                     <circle cx="200" cy="260" r="3" fill="#E9C46A"/>
                 </g>
-
-                <!-- ═══════════════ ITEM 1: VELVET SOFA ═══════════════ -->
                 <g class="furniture-item furniture-item-1">
                     <ellipse cx="200" cy="460" rx="130" ry="18" fill="rgba(0,0,0,0.25)"/>
                     <rect x="70" y="200" width="260" height="200" rx="24" fill="#2A9D8F"/>
@@ -114,8 +118,6 @@
                     <rect x="100" y="240" width="36" height="36" rx="8" fill="#E9C46A" transform="rotate(-8 118 258)"/>
                     <text x="200" y="505" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="12" style="fill: var(--text)" font-weight="600" letter-spacing="3">VELVET SOFA</text>
                 </g>
-
-                <!-- ═══════════════ ITEM 2: DINING COLLECTION ═══════════════ -->
                 <g class="furniture-item furniture-item-2">
                     <ellipse cx="200" cy="460" rx="140" ry="18" fill="rgba(0,0,0,0.25)"/>
                     <rect x="60" y="270" width="280" height="18" rx="6" fill="#F4F1DE"/>
@@ -142,8 +144,6 @@
                     <circle cx="200" cy="250" r="3" style="fill: var(--text)"/>
                     <text x="200" y="505" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="12" fill="#b8a99a" font-weight="600" letter-spacing="3">DINING COLLECTION</text>
                 </g>
-
-                <!-- ═══════════════ ITEM 3: ARC FLOOR LAMP ═══════════════ -->
                 <g class="furniture-item furniture-item-3">
                     <ellipse cx="200" cy="460" rx="100" ry="16" fill="rgba(0,0,0,0.25)"/>
                     <ellipse cx="180" cy="455" rx="40" ry="10" fill="#b8a99a"/>
@@ -160,8 +160,6 @@
                     <circle cx="255" cy="300" r="1.5" fill="#E9C46A" opacity="0.25"/>
                     <text x="200" y="505" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="12" fill="#E9C46A" font-weight="600" letter-spacing="3">ARC FLOOR LAMP</text>
                 </g>
-
-                <!-- ═══════════════ ITEM 4: DISPLAY CABINET ═══════════════ -->
                 <g class="furniture-item furniture-item-4">
                     <ellipse cx="200" cy="460" rx="130" ry="18" fill="rgba(0,0,0,0.25)"/>
                     <rect x="70" y="145" width="260" height="300" rx="6" fill="#5C3A21"/>
@@ -185,8 +183,6 @@
                     <path d="M80 165 L120 165 L100 425 L80 425 Z" fill="rgba(255,255,255,0.04)"/>
                     <text x="200" y="505" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="12" fill="#E9C46A" font-weight="600" letter-spacing="3">DISPLAY CABINET</text>
                 </g>
-
-                <!-- ═══════════════ ITEM 5: STATEMENT ARMCHAIR ═══════════════ -->
                 <g class="furniture-item furniture-item-5">
                     <ellipse cx="200" cy="460" rx="120" ry="18" fill="rgba(0,0,0,0.25)"/>
                     <ellipse cx="200" cy="185" rx="90" ry="40" style="fill: var(--accent)"/>
@@ -205,7 +201,6 @@
                     <ellipse cx="180" cy="230" rx="16" ry="16" fill="#21867A" transform="rotate(-10 180 230)"/>
                     <text x="200" y="505" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="12" style="fill: var(--text)" font-weight="600" letter-spacing="3">STATEMENT ARMCHAIR</text>
                 </g>
-
                 <defs>
                     <linearGradient id="lampGlow1" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="0%" stop-color="#E9C46A"/>
@@ -216,14 +211,23 @@
         </div>
         <div class="container">
             <div class="hero-content">
+                <div class="hero-tags">
+                    <span class="tag">Steel</span>
+                    <span class="tag">Brass</span>
+                    <span class="tag">Walnut</span>
+                    <span class="tag">Velvet</span>
+                </div>
                 <h1 class="stagger-text" id="hero-title">
                     
                 </h1>
-                <p class="hero-subtitle">Crafting raw materials into timeless, premium industrial pieces for modern spaces.</p>
-                <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20would%20like%20to%20get%20a%20price%20estimate%20for%20your%20furniture." class="btn texture-paper" target="_blank" rel="noopener noreferrer">
-                    Get a Price
-                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                </a>
+                <p class="hero-subtitle">MPGS crafts premium industrial furniture — engineered for hotels, institutions and luxury interiors across India.</p>
+                <div class="hero-cta">
+                    <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20would%20like%20to%20get%20a%20price%20estimate%20for%20your%20furniture." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        Get a Price
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                    </a>
+                    <a href="#collections" class="btn btn-outline">View collections</a>
+                </div>
             </div>
         </div>
     </section>
@@ -231,9 +235,12 @@
     <!-- Clientele Marquee -->
     <section class="clientele texture-paper" id="clientele">
         <div class="container">
-            <div class="clientele-header reveal">
-                <h2>Our Clientele</h2>
-                <p>Serving 15+ prestigious clients across Hotels, Education, Hospitality &amp; Retail</p>
+            <div class="section-head reveal">
+                <div>
+                    <span class="eyebrow">In service across</span>
+                    <h2>15+ names trust MPGS<br>with their spaces.</h2>
+                </div>
+                <p class="desc">From heritage hotels to luxury retail, our pieces furnish spaces that can't afford to look ordinary.</p>
             </div>
         </div>
 
@@ -436,21 +443,20 @@
 
     <!-- Collections Section -->
     <section class="collections container" id="collections">
-        <div class="reveal">
-            <h2>Our Collections</h2>
-            <p>Engineered for durability. Designed for impact.</p>
+        <div class="section-head reveal">
+            <div>
+                <span class="eyebrow">Collections</span>
+                <h2>Engineered for durability.<br>Designed for impact.</h2>
+            </div>
         </div>
 
         <div class="categories-grid">
             
             <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Living%20Room%20collection." class="card reveal texture-paper" target="_blank" rel="noopener noreferrer">
-                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 15h16v4H4z"/>
-                    <path d="M2 10h20v5H2z"/>
-                    <path d="M4 5h16v5H4z"/>
-                    <path d="M4 19v2"/>
-                    <path d="M20 19v2"/>
-                </svg>
+                <div class="coll-card-top">
+                    <svg class="coll-icon" viewBox="0 0 120 90"><rect x="4" y="30" width="12" height="32" rx="5"/><rect x="104" y="30" width="12" height="32" rx="5"/><rect x="16" y="38" width="88" height="24" rx="4"/><line x1="16" y1="50" x2="104" y2="50"/><line x1="24" y1="62" x2="24" y2="72"/><line x1="96" y1="62" x2="96" y2="72"/></svg>
+                    <span class="coll-code">MPGS / LR</span>
+                </div>
                 <div class="card-content">
                     <h3>Living Room</h3>
                     <p>Statement seating and industrial tables.</p>
@@ -459,14 +465,10 @@
             </a>
 
             <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Bedroom%20collection." class="card reveal texture-paper" target="_blank" rel="noopener noreferrer">
-                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 14h18v4H3z"/>
-                    <path d="M5 9h14v5H5z"/>
-                    <path d="M3 4v14"/>
-                    <path d="M21 4v14"/>
-                    <path d="M3 18v2"/>
-                    <path d="M21 18v2"/>
-                </svg>
+                <div class="coll-card-top">
+                    <svg class="coll-icon" viewBox="0 0 120 90"><rect x="10" y="18" width="10" height="46" rx="2"/><rect x="10" y="46" width="100" height="20" rx="4"/><rect x="24" y="28" width="26" height="14" rx="4"/><line x1="16" y1="66" x2="16" y2="76"/><line x1="104" y1="66" x2="104" y2="76"/></svg>
+                    <span class="coll-code">MPGS / BR</span>
+                </div>
                 <div class="card-content">
                     <h3>Bedroom</h3>
                     <p>Raw metal frames and warm wood tones.</p>
@@ -475,12 +477,10 @@
             </a>
 
             <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Dining%20collection." class="card reveal texture-paper" target="_blank" rel="noopener noreferrer">
-                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 10h18v2H3z"/>
-                    <path d="M5 12v8"/>
-                    <path d="M19 12v8"/>
-                    <path d="M8 10V6h8v4"/>
-                </svg>
+                <div class="coll-card-top">
+                    <svg class="coll-icon" viewBox="0 0 120 90"><circle cx="60" cy="45" r="26"/><circle cx="60" cy="45" r="4"/><line x1="60" y1="9" x2="60" y2="17"/><line x1="60" y1="73" x2="60" y2="81"/><line x1="24" y1="45" x2="16" y2="45"/><line x1="96" y1="45" x2="104" y2="45"/></svg>
+                    <span class="coll-code">MPGS / DN</span>
+                </div>
                 <div class="card-content">
                     <h3>Dining</h3>
                     <p>Heavy-duty dining tables and seating.</p>
@@ -489,13 +489,10 @@
             </a>
 
             <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Office%20collection." class="card reveal texture-paper" target="_blank" rel="noopener noreferrer">
-                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 12h18v2H3z"/>
-                    <path d="M4 14v6"/>
-                    <path d="M20 14v6"/>
-                    <path d="M14 14v4h6"/>
-                    <path d="M8 12V8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"/>
-                </svg>
+                <div class="coll-card-top">
+                    <svg class="coll-icon" viewBox="0 0 120 90"><rect x="10" y="30" width="100" height="10" rx="2"/><rect x="14" y="40" width="26" height="34" rx="2"/><line x1="94" y1="40" x2="94" y2="74"/><line x1="106" y1="40" x2="106" y2="74"/><line x1="22" y1="52" x2="32" y2="52"/><line x1="22" y1="62" x2="32" y2="62"/></svg>
+                    <span class="coll-code">MPGS / OF</span>
+                </div>
                 <div class="card-content">
                     <h3>Office</h3>
                     <p>Executive desks and shelving units.</p>
@@ -504,12 +501,10 @@
             </a>
 
             <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Outdoor%20collection." class="card reveal texture-paper" target="_blank" rel="noopener noreferrer">
-                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 16l4-8 4 8"/>
-                    <path d="M12 16l4-8 4 8"/>
-                    <path d="M2 16h20"/>
-                    <circle cx="18" cy="6" r="2"/>
-                </svg>
+                <div class="coll-card-top">
+                    <svg class="coll-icon" viewBox="0 0 120 90"><line x1="16" y1="20" x2="16" y2="44"/><line x1="16" y1="26" x2="34" y2="26"/><line x1="16" y1="34" x2="34" y2="34"/><line x1="16" y1="44" x2="60" y2="44"/><line x1="20" y1="44" x2="16" y2="66"/><line x1="56" y1="44" x2="60" y2="66"/><circle cx="92" cy="26" r="10"/><line x1="92" y1="8" x2="92" y2="12"/><line x1="92" y1="40" x2="92" y2="44"/><line x1="74" y1="26" x2="78" y2="26"/><line x1="106" y1="26" x2="110" y2="26"/></svg>
+                    <span class="coll-code">MPGS / OD</span>
+                </div>
                 <div class="card-content">
                     <h3>Outdoor</h3>
                     <p>Weather-resistant concrete and steel.</p>
@@ -518,12 +513,10 @@
             </a>
 
             <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Accessories%20collection." class="card reveal texture-paper" target="_blank" rel="noopener noreferrer">
-                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M8 4h8"/>
-                    <path d="M10 4v4"/>
-                    <path d="M14 4v4"/>
-                    <path d="M8 8c-3 5-3 12 0 12h8c3 0 3-7 0-12z"/>
-                </svg>
+                <div class="coll-card-top">
+                    <svg class="coll-icon" viewBox="0 0 120 90"><ellipse cx="30" cy="82" rx="18" ry="5"/><line x1="30" y1="82" x2="30" y2="28"/><path d="M30 28 Q30 10 58 10 Q88 10 88 32"/><path d="M80 32 L96 32 L90 50 L86 50 Z"/></svg>
+                    <span class="coll-code">MPGS / AC</span>
+                </div>
                 <div class="card-content">
                     <h3>Accessories</h3>
                     <p>Industrial lighting and decor accents.</p>
@@ -536,9 +529,12 @@
 
     <!-- Catalogue Section -->
     <section class="catalogue" id="catalogue">
-        <div class="container reveal">
-            <h2>Browse Our Catalogue</h2>
-            <p>Explore our complete range of premium industrial furniture in our latest lookbook.</p>
+        <div class="section-head container reveal">
+            <div>
+                <span class="eyebrow">The archive</span>
+                <h2>A library of<br>finished work.</h2>
+            </div>
+            <p class="desc">Complete lookbooks for every collection — full specifications, dimensions and finishes.</p>
         </div>
         <div class="catalogue-grid container reveal">
             <div class="cat-card" data-catalogue="a003">
@@ -661,7 +657,8 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container reveal">
-            <h2>Ready to Build?</h2>
+            <span class="eyebrow" style="justify-content:center;margin-bottom:1.2rem;">Ready to build</span>
+            <h2>Let's furnish<br>something built to last.</h2>
             <p>Connect directly with our design team on WhatsApp to discuss pricing, custom dimensions, and bulk orders for your space.</p>
             <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20would%20like%20to%20discuss%20a%20project." class="btn texture-paper" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -677,15 +674,18 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">MPGS</div>
-                <div class="footer-links">
-                    <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20have%20a%20question." target="_blank" rel="noopener noreferrer">Contact Us</a>
+                <div class="footer-desc">Crafting raw materials into timeless, premium industrial pieces for modern spaces.</div>
+                <div class="foot-col">
+                    <h4>Studio</h4>
+                    <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20have%20a%20question." target="_blank" rel="noopener noreferrer">Contact</a>
                     <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20want%20to%20know%20about%20shipping." target="_blank" rel="noopener noreferrer">Shipping</a>
-                    <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20want%20to%20know%20about%20custom%20orders." target="_blank" rel="noopener noreferrer">Custom Orders</a>
+                    <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20want%20to%20know%20about%20custom%20orders." target="_blank" rel="noopener noreferrer">Custom orders</a>
                 </div>
-                <div class="footer-links">
-                    <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                <div class="foot-col">
+                    <h4>Collections</h4>
+                    <a href="#collections">Living room</a>
+                    <a href="#collections">Dining</a>
+                    <a href="#collections">Outdoor</a>
                 </div>
             </div>
             <div class="footer-bottom">
