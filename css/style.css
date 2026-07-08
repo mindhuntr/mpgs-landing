@@ -173,14 +173,10 @@ a {
     border-radius: 2px;
     border: 1px solid transparent;
     cursor: pointer;
-    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-                background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transition: background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
                 border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
                 opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     text-decoration: none;
-}
-.btn:hover {
-    transform: translateY(-1px);
 }
 .btn-primary {
     background: var(--btn-primary);
