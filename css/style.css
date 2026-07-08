@@ -118,7 +118,8 @@ a {
 .section-head .desc {
     max-width: 22rem;
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 1.15rem;
+    line-height: 1.5;
     margin-bottom: 0;
 }
 
@@ -262,7 +263,12 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--surface);
+    opacity: 0;
+    animation: headerReveal 0.6s ease 1.8s forwards;
     transition: background 0.4s ease, padding 0.4s ease;
+}
+@keyframes headerReveal {
+    to { opacity: 1; }
 }
 .header.scrolled {
     background: rgba(251, 249, 244, 0.9);
@@ -523,11 +529,44 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
     position: absolute;
     width: 50%;
     height: 100%;
-    background: var(--bg);
+    background:
+        linear-gradient(135deg, color-mix(in srgb, var(--bg) 98%, #fff) 0%, var(--bg) 50%, color-mix(in srgb, var(--bg) 96%, #000) 100%);
     border: 2px solid var(--surface);
     top: 0;
     transform-style: preserve-3d;
     transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.hero-door::before {
+    content: '';
+    position: absolute;
+    top: 12%;
+    left: 15%;
+    width: 70%;
+    height: 76%;
+    border: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
+    border-radius: 3px;
+    box-shadow:
+        inset 0 0 20px color-mix(in srgb, var(--text) 4%, transparent),
+        0 0 1px color-mix(in srgb, var(--text) 6%, transparent);
+}
+.hero-door::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 52px;
+    border-radius: 3px;
+    background: color-mix(in srgb, var(--accent) 40%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+}
+.hero-door-left::after {
+    right: 14%;
+    box-shadow: -1px 0 3px color-mix(in srgb, var(--accent) 10%, transparent);
+}
+.hero-door-right::after {
+    left: 14%;
+    box-shadow: 1px 0 3px color-mix(in srgb, var(--accent) 10%, transparent);
 }
 .hero-door-left {
     left: 0;
@@ -1548,6 +1587,10 @@ footer {
     .card, .hero-doorway, .hero-furniture-rush {
         opacity: 1 !important;
         transform: none !important;
+    }
+    .header {
+        opacity: 1 !important;
+        animation: none !important;
     }
 }
 
