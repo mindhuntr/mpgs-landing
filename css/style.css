@@ -143,21 +143,6 @@ a {
     outline-offset: 2px;
 }
 
-/* ── Material Tags ── */
-.tag {
-    display: inline-flex;
-    align-items: center;
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-    border: 1px solid var(--accent);
-    padding: 5px 11px;
-    border-radius: 2px;
-    color: var(--accent);
-}
-
 /* ── Buttons ── */
 .btn {
     display: inline-flex;
@@ -495,13 +480,6 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
     max-width: min(50vw, 700px);
 }
 
-.hero-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 1.75rem;
-}
-
 .hero-cta {
     display: flex;
     align-items: center;
@@ -836,7 +814,7 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 2rem 2.5rem;
     cursor: pointer;
     text-decoration: none;
@@ -852,11 +830,11 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1rem;
+    margin-bottom: 0.25rem;
 }
 .coll-icon {
-    width: 54px;
-    height: 40px;
+    width: 110px;
+    height: 82px;
     color: var(--text-secondary);
     stroke: currentColor;
     fill: none;
@@ -879,15 +857,9 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
     flex-shrink: 0;
 }
 
-.card-content {
-    position: relative;
-    z-index: 2;
-    pointer-events: none;
-}
-
 .card h3 {
     font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    margin: 0.15rem 0 0.35rem;
     transition: transform 0.3s ease;
     font-weight: 500;
     letter-spacing: -0.01em;
@@ -896,9 +868,9 @@ html { scrollbar-color: var(--surface) var(--bg); scrollbar-width: thin; }
 
 .card p {
     margin: 0;
+    margin-bottom: 0.6rem;
     font-size: 0.92rem;
     color: var(--text-secondary);
-    flex-grow: 1;
     opacity: 1;
 }
 
@@ -1121,10 +1093,11 @@ footer {
 }
 .footer-content {
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid var(--surface);
+    align-items: start;
 }
 .footer-brand {
     font-family: 'Fraunces', Georgia, serif;
@@ -1133,13 +1106,17 @@ footer {
     color: var(--text);
     letter-spacing: 0.02em;
     display: block;
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.4rem;
 }
 .footer-desc {
-    max-width: 22rem;
     font-size: 0.9rem;
+    line-height: 1.6;
     color: var(--text-secondary);
-    margin-bottom: 1rem;
+}
+.footer-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
 }
 .foot-col h4 {
     font-family: 'Hanken Grotesk', sans-serif;
@@ -1175,6 +1152,10 @@ footer {
 }
 @media (max-width: 720px) {
     .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .footer-cols {
         grid-template-columns: 1fr;
     }
 }
@@ -1629,7 +1610,6 @@ footer {
     .client-category { display: none; }
     .catalogue-grid { grid-template-columns: 1fr; gap: var(--gutter); }
     .catalogue-grid-wide { grid-template-columns: 1fr; gap: var(--gutter); }
-    .hero-tags { justify-content: center; }
     .hero-cta { justify-content: center; }
     .section-head { flex-direction: column; align-items: flex-start; gap: 1rem; }
     .section-head .desc { max-width: 100%; }
@@ -1643,4 +1623,16 @@ footer {
     .catalogue-grid { grid-template-columns: 1fr; gap: var(--gutter); }
     .catalogue-grid-wide { grid-template-columns: 1fr; gap: var(--gutter); }
     .hero .btn, .contact .btn { padding: 0.8rem 1.5rem; font-size: 0.9rem; }
+}
+
+/* ── Dark Theme Header Override ── */
+[data-theme-type="dark"] .header-logo,
+[data-theme-type="dark"] .header-nav a {
+    color: var(--bg);
+}
+[data-theme-type="dark"] .nav-toggle span {
+    background: var(--bg);
+}
+[data-theme-type="dark"] .header-nav a::after {
+    background: var(--bg);
 }
