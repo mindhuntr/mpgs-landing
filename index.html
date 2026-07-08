@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link id="theme-css" rel="stylesheet" href="themes/tuscan-sunset.css">
 </head>
-<body>
+<body class="texture-linen">
 
     <!-- Scroll Progress -->
     <div id="scroll-progress"></div>
@@ -19,8 +19,12 @@
         <nav class="header-nav" id="nav">
             <a href="#collections">Collections</a>
             <a href="#catalogue">Catalogue</a>
+            <a href="#clientele">Clientele</a>
             <a href="#contact">Contact</a>
-            <a href="https://wa.me/919876543210?text=Hi%20MPGS,%20I%20would%20like%20to%20get%20a%20price%20estimate%20for%20your%20furniture." class="header-cta" target="_blank" rel="noopener noreferrer">Get a Price</a>
+            <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20would%20like%20to%20get%20a%20price%20estimate%20for%20your%20furniture." class="header-cta" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Get a Price
+            </a>
         </nav>
         <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
             <span></span><span></span><span></span>
@@ -35,6 +39,7 @@
         </filter>
     </svg>
 
+    <main>
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <canvas id="hero-canvas"></canvas>
@@ -49,8 +54,8 @@
             <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <!-- ── SPEED SWOOSHES ── -->
                 <g class="speed-swoosh speed-swoosh-1">
-                    <path d="M-20 260 L440 220" style="stroke: var(--warm-white); stroke-width: 2; opacity: 0.3"/>
-                    <path d="M-20 270 L440 230" style="stroke: var(--brick); stroke-width: 1; opacity: 0.2"/>
+                    <path d="M-20 260 L440 220" style="stroke: var(--on-background); stroke-width: 2; opacity: 0.3"/>
+                    <path d="M-20 270 L440 230" style="stroke: var(--gold-muted); stroke-width: 1; opacity: 0.2"/>
                 </g>
                 <g class="speed-swoosh speed-swoosh-2">
                     <path d="M-20 260 L440 220" stroke="#E9C46A" stroke-width="2" opacity="0.3"/>
@@ -62,25 +67,25 @@
                 </g>
                 <g class="speed-swoosh speed-swoosh-4">
                     <path d="M-20 260 L440 220" stroke="#E76F51" stroke-width="2" opacity="0.3"/>
-                    <path d="M-20 270 L440 230" style="stroke: var(--brick); stroke-width: 1; opacity: 0.2"/>
+                    <path d="M-20 270 L440 230" style="stroke: var(--gold-muted); stroke-width: 1; opacity: 0.2"/>
                 </g>
                 <g class="speed-swoosh speed-swoosh-5">
                     <path d="M-20 260 L440 220" stroke="#E9C46A" stroke-width="2" opacity="0.3"/>
-                    <path d="M-20 270 L440 230" style="stroke: var(--brick); stroke-width: 1; opacity: 0.2"/>
+                    <path d="M-20 270 L440 230" style="stroke: var(--gold-muted); stroke-width: 1; opacity: 0.2"/>
                 </g>
 
                 <!-- ── PARTICLE BURST ── -->
                 <g class="rush-particle rush-particle-1" style="--dx:-25px;--dy:-30px;">
-                    <circle cx="200" cy="260" r="3" style="fill: var(--warm-white)"/>
+                    <circle cx="200" cy="260" r="3" style="fill: var(--on-background)"/>
                 </g>
                 <g class="rush-particle rush-particle-1" style="--dx:30px;--dy:-20px;">
-                    <circle cx="200" cy="260" r="2" style="fill: var(--brick)"/>
+                    <circle cx="200" cy="260" r="2" style="fill: var(--gold-muted)"/>
                 </g>
                 <g class="rush-particle rush-particle-2" style="--dx:-20px;--dy:-35px;">
                     <circle cx="200" cy="260" r="3" fill="#E9C46A"/>
                 </g>
                 <g class="rush-particle rush-particle-2" style="--dx:25px;--dy:-25px;">
-                    <circle cx="200" cy="260" r="2" style="fill: var(--warm-white)"/>
+                    <circle cx="200" cy="260" r="2" style="fill: var(--on-background)"/>
                 </g>
                 <g class="rush-particle rush-particle-3" style="--dx:-30px;--dy:-20px;">
                     <circle cx="200" cy="260" r="3" fill="#2A9D8F"/>
@@ -105,10 +110,10 @@
                     <rect x="192" y="275" width="16" height="90" rx="6" fill="#2A9D8F"/>
                     <rect x="56" y="235" width="26" height="150" rx="10" fill="#1E7A6E"/>
                     <rect x="318" y="235" width="26" height="150" rx="10" fill="#1E7A6E"/>
-                    <rect x="92" y="400" width="10" height="50" rx="4" fill="#D4A373"/>
-                    <rect x="298" y="400" width="10" height="50" rx="4" fill="#D4A373"/>
+                    <rect x="92" y="400" width="10" height="50" rx="4" fill="#b8a99a"/>
+                    <rect x="298" y="400" width="10" height="50" rx="4" fill="#b8a99a"/>
                     <rect x="100" y="240" width="36" height="36" rx="8" fill="#E9C46A" transform="rotate(-8 118 258)"/>
-                    <text x="200" y="505" text-anchor="middle" font-family="Alegreya Sans,sans-serif" font-size="12" style="fill: var(--warm-white)" font-weight="600" letter-spacing="3">VELVET SOFA</text>
+                    <text x="200" y="505" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="12" style="fill: var(--on-background)" font-weight="600" letter-spacing="3">VELVET SOFA</text>
                 </g>
 
                 <!-- ═══════════════ ITEM 2: DINING COLLECTION ═══════════════ -->
@@ -117,7 +122,7 @@
                     <rect x="60" y="270" width="280" height="18" rx="6" fill="#F4F1DE"/>
                     <rect x="60" y="270" width="280" height="8" rx="6" fill="rgba(255,255,255,0.4)"/>
                     <path d="M120 276 Q160 272 200 278 Q240 274 280 276" stroke="rgba(0,0,0,0.05)" stroke-width="1" fill="none"/>
-                    <rect x="75" y="288" width="250" height="10" rx="3" fill="#D4A373"/>
+                    <rect x="75" y="288" width="250" height="10" rx="3" fill="#b8a99a"/>
                     <rect x="88" y="298" width="12" height="110" rx="4" fill="#8B5A2B"/>
                     <rect x="300" y="298" width="12" height="110" rx="4" fill="#8B5A2B"/>
                     <rect x="192" y="298" width="10" height="110" rx="4" fill="#8B5A2B"/>
@@ -132,21 +137,21 @@
                     <rect x="324" y="312" width="8" height="80" rx="3" fill="#8B5A2B"/>
                     <rect x="354" y="312" width="8" height="80" rx="3" fill="#8B5A2B"/>
                     <ellipse cx="200" cy="264" rx="28" ry="10" fill="#E76F51"/>
-                    <ellipse cx="200" cy="262" rx="22" ry="7" style="fill: var(--brick)"/>
+                    <ellipse cx="200" cy="262" rx="22" ry="7" style="fill: var(--gold-muted)"/>
                     <circle cx="190" cy="256" r="3" fill="#E9C46A"/>
                     <circle cx="210" cy="254" r="3" fill="#E9C46A"/>
-                    <circle cx="200" cy="250" r="3" style="fill: var(--warm-white)"/>
-                    <text x="200" y="505" text-anchor="middle" font-family="Alegreya Sans,sans-serif" font-size="12" fill="#D4A373" font-weight="600" letter-spacing="3">DINING COLLECTION</text>
+                    <circle cx="200" cy="250" r="3" style="fill: var(--on-background)"/>
+                    <text x="200" y="505" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="12" fill="#b8a99a" font-weight="600" letter-spacing="3">DINING COLLECTION</text>
                 </g>
 
                 <!-- ═══════════════ ITEM 3: ARC FLOOR LAMP ═══════════════ -->
                 <g class="furniture-item furniture-item-3">
                     <ellipse cx="200" cy="460" rx="100" ry="16" fill="rgba(0,0,0,0.25)"/>
-                    <ellipse cx="180" cy="455" rx="40" ry="10" fill="#D4A373"/>
+                    <ellipse cx="180" cy="455" rx="40" ry="10" fill="#b8a99a"/>
                     <ellipse cx="180" cy="450" rx="35" ry="8" fill="#E9C46A"/>
                     <rect x="176" y="195" width="8" height="258" rx="4" fill="#E9C46A"/>
                     <path d="M180 195 Q180 100 280 100" stroke="#E9C46A" stroke-width="6" stroke-linecap="round" fill="none"/>
-                    <rect x="274" y="96" width="12" height="8" rx="2" fill="#D4A373"/>
+                    <rect x="274" y="96" width="12" height="8" rx="2" fill="#b8a99a"/>
                     <path d="M250 104 L310 104 L300 148 L260 148 Z" fill="#E9C46A"/>
                     <path d="M254 104 L306 104 L298 144 L262 144 Z" fill="#F4A261"/>
                     <path d="M270 148 L170 380 L380 380 Z" fill="url(#lampGlow1)" opacity="0.12"/>
@@ -154,7 +159,7 @@
                     <circle cx="230" cy="220" r="2" fill="#E9C46A" opacity="0.3"/>
                     <circle cx="300" cy="250" r="2" fill="#E9C46A" opacity="0.2"/>
                     <circle cx="255" cy="300" r="1.5" fill="#E9C46A" opacity="0.25"/>
-                    <text x="200" y="505" text-anchor="middle" font-family="Alegreya Sans,sans-serif" font-size="12" fill="#E9C46A" font-weight="600" letter-spacing="3">ARC FLOOR LAMP</text>
+                    <text x="200" y="505" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="12" fill="#E9C46A" font-weight="600" letter-spacing="3">ARC FLOOR LAMP</text>
                 </g>
 
                 <!-- ═══════════════ ITEM 4: DISPLAY CABINET ═══════════════ -->
@@ -175,31 +180,31 @@
                     <rect x="245" y="210" width="36" height="22" rx="3" fill="#E9C46A" opacity="0.7"/>
                     <rect x="120" y="260" width="40" height="48" rx="3" fill="#E9C46A" opacity="0.6"/>
                     <rect x="220" y="270" width="50" height="38" rx="2" fill="#2A9D8F" opacity="0.7"/>
-                    <circle cx="250" cy="289" r="8" style="fill: var(--warm-white)" opacity="0.5"/>
+                    <circle cx="250" cy="289" r="8" style="fill: var(--on-background)" opacity="0.5"/>
                     <rect x="140" y="330" width="40" height="54" rx="3" fill="#E76F51" opacity="0.6"/>
                     <ellipse cx="260" cy="360" rx="25" ry="15" fill="#2A9D8F" opacity="0.6"/>
                     <path d="M80 165 L120 165 L100 425 L80 425 Z" fill="rgba(255,255,255,0.04)"/>
-                    <text x="200" y="505" text-anchor="middle" font-family="Alegreya Sans,sans-serif" font-size="12" fill="#E9C46A" font-weight="600" letter-spacing="3">DISPLAY CABINET</text>
+                    <text x="200" y="505" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="12" fill="#E9C46A" font-weight="600" letter-spacing="3">DISPLAY CABINET</text>
                 </g>
 
                 <!-- ═══════════════ ITEM 5: STATEMENT ARMCHAIR ═══════════════ -->
                 <g class="furniture-item furniture-item-5">
                     <ellipse cx="200" cy="460" rx="120" ry="18" fill="rgba(0,0,0,0.25)"/>
-                    <ellipse cx="200" cy="185" rx="90" ry="40" style="fill: var(--brick-dark)"/>
-                    <rect x="110" y="195" width="180" height="130" rx="18" style="fill: var(--brick)"/>
-                    <rect x="120" y="255" width="160" height="80" rx="16" style="fill: var(--brick-dark)"/>
-                    <ellipse cx="200" cy="260" rx="74" ry="16" style="fill: var(--brick)"/>
-                    <circle cx="160" cy="310" r="5" style="fill: var(--brick-dark)"/>
-                    <circle cx="200" cy="310" r="5" style="fill: var(--brick-dark)"/>
-                    <circle cx="240" cy="310" r="5" style="fill: var(--brick-dark)"/>
-                    <ellipse cx="108" cy="250" rx="20" ry="45" style="fill: var(--brick-dark)"/>
-                    <ellipse cx="292" cy="250" rx="20" ry="45" style="fill: var(--brick-dark)"/>
+                    <ellipse cx="200" cy="185" rx="90" ry="40" style="fill: var(--outline)"/>
+                    <rect x="110" y="195" width="180" height="130" rx="18" style="fill: var(--gold-muted)"/>
+                    <rect x="120" y="255" width="160" height="80" rx="16" style="fill: var(--outline)"/>
+                    <ellipse cx="200" cy="260" rx="74" ry="16" style="fill: var(--gold-muted)"/>
+                    <circle cx="160" cy="310" r="5" style="fill: var(--outline)"/>
+                    <circle cx="200" cy="310" r="5" style="fill: var(--outline)"/>
+                    <circle cx="240" cy="310" r="5" style="fill: var(--outline)"/>
+                    <ellipse cx="108" cy="250" rx="20" ry="45" style="fill: var(--outline)"/>
+                    <ellipse cx="292" cy="250" rx="20" ry="45" style="fill: var(--outline)"/>
                     <rect x="130" y="400" width="10" height="50" rx="4" fill="#E9C46A"/>
                     <rect x="260" y="400" width="10" height="50" rx="4" fill="#E9C46A"/>
-                    <rect x="200" y="405" width="10" height="45" rx="4" fill="#D4A373"/>
+                    <rect x="200" y="405" width="10" height="45" rx="4" fill="#b8a99a"/>
                     <ellipse cx="180" cy="230" rx="22" ry="22" fill="#2A9D8F" transform="rotate(-10 180 230)"/>
                     <ellipse cx="180" cy="230" rx="16" ry="16" fill="#21867A" transform="rotate(-10 180 230)"/>
-                    <text x="200" y="505" text-anchor="middle" font-family="Alegreya Sans,sans-serif" font-size="12" style="fill: var(--warm-white)" font-weight="600" letter-spacing="3">STATEMENT ARMCHAIR</text>
+                    <text x="200" y="505" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="12" style="fill: var(--on-background)" font-weight="600" letter-spacing="3">STATEMENT ARMCHAIR</text>
                 </g>
 
                 <defs>
@@ -216,7 +221,7 @@
                     <!-- JS will populate this -->
                 </h1>
                 <p class="hero-subtitle">Crafting raw materials into timeless, premium industrial pieces for modern spaces.</p>
-                <a href="https://wa.me/919876543210?text=Hi%20MPGS,%20I%20would%20like%20to%20get%20a%20price%20estimate%20for%20your%20furniture." class="btn" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20would%20like%20to%20get%20a%20price%20estimate%20for%20your%20furniture." class="btn texture-paper" target="_blank" rel="noopener noreferrer">
                     Get a Price
                     <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
                 </a>
@@ -225,7 +230,7 @@
     </section>
 
     <!-- Clientele Marquee -->
-    <section class="clientele" id="clientele">
+    <section class="clientele texture-paper" id="clientele">
         <div class="container">
             <div class="clientele-header reveal">
                 <h2>Our Clientele</h2>
@@ -431,7 +436,7 @@
     </section>
 
     <!-- Collections Section -->
-    <section class="collections container" id="collections">
+    <section class="collections container texture-marble" id="collections">
         <div class="reveal">
             <h2>Our Collections</h2>
             <p>Engineered for durability. Designed for impact.</p>
@@ -439,16 +444,7 @@
 
         <div class="categories-grid">
             
-            <!-- Card 1: Living Room (3D Parallax) -->
-            <a href="https://wa.me/919876543210?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Living%20Room%20collection." class="card reveal" id="card-living" target="_blank" rel="noopener noreferrer">
-                <div class="parallax-bg"></div>
-                <div class="room-scene living-room">
-                    <div class="room-wall"></div>
-                    <div class="room-floor"></div>
-                    <div class="sofa"></div>
-                    <div class="coffee-table"></div>
-                    <div class="lamp"><div class="lamp-glow"></div></div>
-                </div>
+            <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Living%20Room%20collection." class="card reveal texture-paper" target="_blank" rel="noopener noreferrer">
                 <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M4 15h16v4H4z"/>
                     <path d="M2 10h20v5H2z"/>
@@ -463,27 +459,14 @@
                 </div>
             </a>
 
-            <!-- Card 2: Bedroom (SVG Draw) -->
-            <a href="https://wa.me/919876543210?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Bedroom%20collection." class="card reveal" id="card-bedroom" target="_blank" rel="noopener noreferrer">
-                <div class="room-scene bedroom">
-                    <div class="window">
-                        <div class="moon"></div>
-                    </div>
-                    <div class="curtain curtain-left"></div>
-                    <div class="curtain curtain-right"></div>
-                    <div class="bed">
-                        <div class="pillow"></div>
-                        <div class="pillow right"></div>
-                    </div>
-                    <div class="bedside-lamp"><div class="lamp-glow"></div></div>
-                </div>
+            <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Bedroom%20collection." class="card reveal texture-paper" target="_blank" rel="noopener noreferrer">
                 <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path class="draw-path" d="M3 14h18v4H3z"/>
-                    <path class="draw-path" d="M5 9h14v5H5z"/>
-                    <path class="draw-path" d="M3 4v14"/>
-                    <path class="draw-path" d="M21 4v14"/>
-                    <path class="draw-path" d="M3 18v2"/>
-                    <path class="draw-path" d="M21 18v2"/>
+                    <path d="M3 14h18v4H3z"/>
+                    <path d="M5 9h14v5H5z"/>
+                    <path d="M3 4v14"/>
+                    <path d="M21 4v14"/>
+                    <path d="M3 18v2"/>
+                    <path d="M21 18v2"/>
                 </svg>
                 <div class="card-content">
                     <h3>Bedroom</h3>
@@ -492,16 +475,7 @@
                 </div>
             </a>
 
-            <!-- Card 3: Dining (Embers) -->
-            <a href="https://wa.me/919876543210?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Dining%20collection." class="card reveal" id="card-dining" target="_blank" rel="noopener noreferrer">
-                <div class="room-scene dining">
-                    <div class="dining-table"></div>
-                    <div class="plate p1"></div>
-                    <div class="plate p2"></div>
-                    <div class="chair c1"></div>
-                    <div class="chair c2"></div>
-                    <div class="pendant-light"><div class="lamp-glow"></div></div>
-                </div>
+            <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Dining%20collection." class="card reveal texture-paper" target="_blank" rel="noopener noreferrer">
                 <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M3 10h18v2H3z"/>
                     <path d="M5 12v8"/>
@@ -515,20 +489,7 @@
                 </div>
             </a>
 
-            <!-- Card 4: Office (Liquid Ripple) -->
-            <a href="https://wa.me/919876543210?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Office%20collection." class="card reveal" id="card-office" target="_blank" rel="noopener noreferrer">
-                <div class="ripple-bg"></div>
-                <div class="room-scene office">
-                    <div class="bookshelf">
-                        <div class="book b1"></div>
-                        <div class="book b2"></div>
-                        <div class="book b3"></div>
-                    </div>
-                    <div class="desk"></div>
-                    <div class="monitor"></div>
-                    <div class="desk-lamp"><div class="lamp-glow"></div></div>
-                    <div class="paper"></div>
-                </div>
+            <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Office%20collection." class="card reveal texture-paper" target="_blank" rel="noopener noreferrer">
                 <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M3 12h18v2H3z"/>
                     <path d="M4 14v6"/>
@@ -543,21 +504,7 @@
                 </div>
             </a>
 
-            <!-- Card 5: Outdoor (3D Orbit) -->
-            <a href="https://wa.me/919876543210?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Outdoor%20collection." class="card reveal" id="card-outdoor" target="_blank" rel="noopener noreferrer">
-                <div class="room-scene outdoor">
-                    <div class="sky"></div>
-                    <div class="sun"></div>
-                    <div class="patio"></div>
-                    <div class="plant p1"></div>
-                    <div class="plant p2"></div>
-                    <div class="outdoor-chair"></div>
-                </div>
-                <div class="orbit-container">
-                    <div class="orbit-shape shape1"></div>
-                    <div class="orbit-shape shape2"></div>
-                    <div class="orbit-shape shape3"></div>
-                </div>
+            <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Outdoor%20collection." class="card reveal texture-paper" target="_blank" rel="noopener noreferrer">
                 <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M4 16l4-8 4 8"/>
                     <path d="M12 16l4-8 4 8"/>
@@ -571,15 +518,7 @@
                 </div>
             </a>
 
-            <!-- Card 6: Accessories (Neon Glow) -->
-            <a href="https://wa.me/919876543210?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Accessories%20collection." class="card reveal" id="card-accessories" target="_blank" rel="noopener noreferrer">
-                <div class="room-scene accessories">
-                    <div class="wall-shelf"></div>
-                    <div class="decor d1"></div>
-                    <div class="decor d2"></div>
-                    <div class="picture-frame"></div>
-                    <div class="accent-light"></div>
-                </div>
+            <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I'm%20interested%20in%20the%20Accessories%20collection." class="card reveal texture-paper" target="_blank" rel="noopener noreferrer">
                 <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M8 4h8"/>
                     <path d="M10 4v4"/>
@@ -604,96 +543,116 @@
         </div>
         <div class="catalogue-grid container reveal">
             <div class="cat-card" data-catalogue="a003">
-                <div class="cat-thumb">
+                <div class="cat-thumb texture-paper">
                     <img src="catalaogues/pages/a003/page-001.jpg" alt="A003 Chair Collection" loading="lazy">
-                    <div class="cat-badge">101 pages</div>
+                    <div class="cat-badge">101 PAGES</div>
                 </div>
                 <div class="cat-info">
-                    <h3>A003 Chair Collection</h3>
-                    <span class="cat-meta">27 MB · 101 product pages</span>
-                    <span class="cat-btn">Browse <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+                    <h4>A003 Chair Collection</h4>
+                    <div class="cat-meta-row">
+                        <span class="cat-meta">27 MB · 101 product pages</span>
+                        <span class="cat-browse">BROWSE →</span>
+                    </div>
                 </div>
             </div>
             <div class="cat-card" data-catalogue="a249">
-                <div class="cat-thumb">
+                <div class="cat-thumb texture-paper">
                     <img src="catalaogues/pages/a249/page-01.jpg" alt="A249 Chair Collection" loading="lazy">
-                    <div class="cat-badge">21 pages</div>
+                    <div class="cat-badge">21 PAGES</div>
                 </div>
                 <div class="cat-info">
-                    <h3>A249 Chair Collection</h3>
-                    <span class="cat-meta">4.2 MB · 21 product pages</span>
-                    <span class="cat-btn">Browse <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+                    <h4>A249 Chair Collection</h4>
+                    <div class="cat-meta-row">
+                        <span class="cat-meta">4.2 MB · 21 product pages</span>
+                        <span class="cat-browse">BROWSE →</span>
+                    </div>
                 </div>
             </div>
             <div class="cat-card" data-catalogue="a290">
-                <div class="cat-thumb">
+                <div class="cat-thumb texture-paper">
                     <img src="catalaogues/pages/a290/page-01.jpg" alt="A290 Chair Collection" loading="lazy">
-                    <div class="cat-badge">57 pages</div>
+                    <div class="cat-badge">57 PAGES</div>
                 </div>
                 <div class="cat-info">
-                    <h3>A290 Chair Collection</h3>
-                    <span class="cat-meta">11 MB · 57 product pages</span>
-                    <span class="cat-btn">Browse <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+                    <h4>A290 Chair Collection</h4>
+                    <div class="cat-meta-row">
+                        <span class="cat-meta">11 MB · 57 product pages</span>
+                        <span class="cat-browse">BROWSE →</span>
+                    </div>
                 </div>
             </div>
             <div class="cat-card" data-catalogue="a298">
-                <div class="cat-thumb">
+                <div class="cat-thumb texture-paper">
                     <img src="catalaogues/pages/a298/page-01.jpg" alt="A298 Chair Collection" loading="lazy">
-                    <div class="cat-badge">25 pages</div>
+                    <div class="cat-badge">25 PAGES</div>
                 </div>
                 <div class="cat-info">
-                    <h3>A298 Chair Collection</h3>
-                    <span class="cat-meta">5.1 MB · 25 product pages</span>
-                    <span class="cat-btn">Browse <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+                    <h4>A298 Chair Collection</h4>
+                    <div class="cat-meta-row">
+                        <span class="cat-meta">5.1 MB · 25 product pages</span>
+                        <span class="cat-browse">BROWSE →</span>
+                    </div>
                 </div>
             </div>
-            <div class="cat-card" data-catalogue="a303">
-                <div class="cat-thumb">
-                    <img src="catalaogues/pages/a303/page-1.jpg" alt="A303 Chair Collection" loading="lazy">
-                    <div class="cat-badge">6 pages</div>
-                </div>
-                <div class="cat-info">
-                    <h3>A303 Chair Collection</h3>
-                    <span class="cat-meta">2.8 MB · 6 product pages</span>
-                    <span class="cat-btn">Browse <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
-                </div>
-            </div>
-            <div class="cat-card" data-catalogue="aimeixuan_full">
-                <div class="cat-thumb">
+        </div>
+        <div class="catalogue-grid-wide container reveal">
+            <div class="cat-card cat-wide" data-catalogue="aimeixuan_full">
+                <div class="cat-thumb texture-paper">
                     <img src="catalaogues/pages/aimeixuan_full/page-1.jpg" alt="Aimeixuan Full Collection" loading="lazy">
-                    <div class="cat-badge">177 pages</div>
+                    <div class="cat-badge">177 PAGES</div>
                 </div>
                 <div class="cat-info">
-                    <h3>Aimeixuan Full Collection</h3>
-                    <span class="cat-meta">31 MB · 177 product pages</span>
-                    <span class="cat-btn">Browse <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+                    <h4>Aimeixuan Full Collection</h4>
+                    <div class="cat-meta-row">
+                        <span class="cat-meta">31 MB · 177 product pages</span>
+                        <span class="cat-browse">BROWSE →</span>
+                    </div>
                 </div>
             </div>
-            <div class="cat-card" data-catalogue="aimeixuan_2025">
-                <div class="cat-thumb">
+            <div class="cat-card cat-wide" data-catalogue="aimeixuan_2025">
+                <div class="cat-thumb texture-paper">
                     <img src="catalaogues/pages/aimeixuan_2025/page-1.jpg" alt="Aimeixuan 2025 Catalogue" loading="lazy">
-                    <div class="cat-badge">152 pages</div>
+                    <div class="cat-badge">152 PAGES</div>
                 </div>
                 <div class="cat-info">
-                    <h3>Aimeixuan 2025 Catalogue</h3>
-                    <span class="cat-meta">40 MB · 152 product pages</span>
-                    <span class="cat-btn">Browse <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+                    <h4>Aimeixuan 2025 Catalogue</h4>
+                    <div class="cat-meta-row">
+                        <span class="cat-meta">40 MB · 152 product pages</span>
+                        <span class="cat-browse">BROWSE →</span>
+                    </div>
                 </div>
             </div>
-            <div class="cat-card" data-catalogue="aimeixuan_minimal">
-                <div class="cat-thumb">
-                    <img src="catalaogues/pages/aimeixuan_minimal/page-1.jpg" alt="Aimeixuan Minimalist Series" loading="lazy">
-                    <div class="cat-badge">68 pages</div>
+        </div>
+        <div class="catalogue-grid-wide container reveal">
+            <div class="cat-card cat-wide" data-catalogue="a303">
+                <div class="cat-thumb texture-paper">
+                    <img src="catalaogues/pages/a303/page-1.jpg" alt="A303 Chair Collection" loading="lazy">
+                    <div class="cat-badge">6 PAGES</div>
                 </div>
                 <div class="cat-info">
-                    <h3>Aimeixuan Minimalist Series</h3>
-                    <span class="cat-meta">15 MB · 68 product pages</span>
-                    <span class="cat-btn">Browse <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+                    <h4>A303 Chair Collection</h4>
+                    <div class="cat-meta-row">
+                        <span class="cat-meta">2.8 MB · 6 product pages</span>
+                        <span class="cat-browse">BROWSE →</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cat-card cat-wide" data-catalogue="aimeixuan_minimal">
+                <div class="cat-thumb texture-paper">
+                    <img src="catalaogues/pages/aimeixuan_minimal/page-1.jpg" alt="Aimeixuan Minimalist Series" loading="lazy">
+                    <div class="cat-badge">68 PAGES</div>
+                </div>
+                <div class="cat-info">
+                    <h4>Aimeixuan Minimalist Series</h4>
+                    <div class="cat-meta-row">
+                        <span class="cat-meta">15 MB · 68 product pages</span>
+                        <span class="cat-browse">BROWSE →</span>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="reveal">
-            <a href="https://wa.me/919876543210?text=Hi%20MPGS,%20I%20would%20like%20to%20get%20the%20full%20catalogue." class="btn" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20would%20like%20to%20get%20the%20full%20catalogue." class="btn texture-paper" target="_blank" rel="noopener noreferrer">
                 Request Full Catalogue
                 <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
             </a>
@@ -705,22 +664,29 @@
         <div class="container reveal">
             <h2>Ready to Build?</h2>
             <p>Connect directly with our design team on WhatsApp to discuss pricing, custom dimensions, and bulk orders for your space.</p>
-            <a href="https://wa.me/919876543210?text=Hi%20MPGS,%20I%20would%20like%20to%20discuss%20a%20project." class="btn" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20would%20like%20to%20discuss%20a%20project." class="btn texture-paper" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                 Chat on WhatsApp
-                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
             </a>
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
-    <footer>
+    <footer class="texture-paper">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">MPGS</div>
                 <div class="footer-links">
-                    <a href="https://wa.me/919876543210?text=Hi%20MPGS,%20I%20have%20a%20question." target="_blank" rel="noopener noreferrer">Contact</a>
-                    <a href="https://wa.me/919876543210?text=Hi%20MPGS,%20I%20want%20to%20know%20about%20shipping." target="_blank" rel="noopener noreferrer">Shipping</a>
-                    <a href="https://wa.me/919876543210?text=Hi%20MPGS,%20I%20want%20to%20know%20about%20custom%20orders." target="_blank" rel="noopener noreferrer">Custom Orders</a>
+                    <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20have%20a%20question." target="_blank" rel="noopener noreferrer">Contact Us</a>
+                    <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20want%20to%20know%20about%20shipping." target="_blank" rel="noopener noreferrer">Shipping</a>
+                    <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20want%20to%20know%20about%20custom%20orders." target="_blank" rel="noopener noreferrer">Custom Orders</a>
+                </div>
+                <div class="footer-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -730,7 +696,7 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/919876543210?text=Hi%20MPGS,%20I%20need%20assistance." class="floating-wa" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/9190880185642?text=Hi%20MPGS,%20I%20need%20assistance." class="floating-wa texture-paper" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <svg viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>

@@ -90,9 +90,9 @@ class Particle {
         this.size = Math.random() * 2 + 0.5;
         this.speedX = Math.random() * 1 - 0.5;
         this.speedY = Math.random() * 1 - 0.5;
-    const brick = getComputedStyle(document.documentElement).getPropertyValue('--brick').trim() || '#E35336';
-    const concrete = getComputedStyle(document.documentElement).getPropertyValue('--concrete').trim() || '#9988A1';
-    this.color = Math.random() > 0.5 ? brick : concrete;
+    const gold = getComputedStyle(document.documentElement).getPropertyValue('--gold-muted').trim() || '#b8a99a';
+    const surface = getComputedStyle(document.documentElement).getPropertyValue('--on-surface-variant').trim() || '#4f453c';
+    this.color = Math.random() > 0.5 ? gold : surface;
     this.opacity = Math.random() * 0.5 + 0.1;
 }
 update() {
@@ -133,98 +133,8 @@ resize();
 initParticles();
 animateParticles();
 
-// 4. Card 1: 3D Parallax Effect
-const cardLiving = document.getElementById('card-living');
-const parallaxBg = cardLiving.querySelector('.parallax-bg');
-const cardContent = cardLiving.querySelector('.card-content');
-const cardIcon = cardLiving.querySelector('.card-icon');
-
-cardLiving.addEventListener('mousemove', (e) => {
-    const rect = cardLiving.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    const rotateX = ((y - centerY) / centerY) * -10;
-    const rotateY = ((x - centerX) / centerX) * 10;
-    
-    parallaxBg.style.transform = `translateX(${(x - centerX) * -0.05}px) translateY(${(y - centerY) * -0.05}px)`;
-    cardContent.style.transform = `translateZ(40px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    cardIcon.style.transform = `translateZ(60px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-});
-
-cardLiving.addEventListener('mouseleave', () => {
-    parallaxBg.style.transform = `translateX(0) translateY(0)`;
-    cardContent.style.transform = `translateZ(40px) rotateX(0) rotateY(0)`;
-    cardIcon.style.transform = `translateZ(40px) rotateX(0) rotateY(0)`;
-});
-
-// 5. Card 3: Embers Effect
-const cardDining = document.getElementById('card-dining');
-let emberInterval;
-
-cardDining.addEventListener('mouseenter', () => {
-    emberInterval = setInterval(() => {
-        const ember = document.createElement('div');
-        ember.className = 'ember';
-        ember.style.left = `${Math.random() * 100}%`;
-        cardDining.appendChild(ember);
-
-        const duration = Math.random() * 1000 + 1000;
-        const targetY = -(Math.random() * 150 + 100);
-        const targetX = (Math.random() - 0.5) * 50;
-
-        ember.animate([
-            { transform: 'translate(0, 0) scale(1)', opacity: 1 },
-            { transform: `translate(${targetX}px, ${targetY}px) scale(0)`, opacity: 0 }
-        ], {
-            duration: duration,
-            easing: 'cubic-bezier(0.25, 1, 0.5, 1)'
-        });
-
-        setTimeout(() => {
-            if (cardDining.contains(ember)) {
-                cardDining.removeChild(ember);
-            }
-        }, duration);
-    }, 100);
-});
-
-cardDining.addEventListener('mouseleave', () => {
-    clearInterval(emberInterval);
-});
-
-// 6. Card 4: Liquid Ripple Effect
-const cardOffice = document.getElementById('card-office');
-const displacementMap = document.getElementById('displacement');
-let rippleReq;
-let scale = 0;
-let targetScale = 0;
-
-function animateRipple() {
-    scale += (targetScale - scale) * 0.1;
-    displacementMap.setAttribute('scale', scale);
-    
-    if (Math.abs(targetScale - scale) > 0.1 || targetScale > 0) {
-        rippleReq = requestAnimationFrame(animateRipple);
-    }
-}
-
-cardOffice.addEventListener('mouseenter', () => {
-    targetScale = 30;
-    cancelAnimationFrame(rippleReq);
-    animateRipple();
-});
-
-cardOffice.addEventListener('mouseleave', () => {
-    targetScale = 0;
-    cancelAnimationFrame(rippleReq);
-    animateRipple();
-});
-
 // ════════════════════════════════════════════════
-// 7. 3D Flip-Book Viewer
+// 4. 3D Flip-Book Viewer
 // ════════════════════════════════════════════════
 
 const CATALOGUES = [
@@ -431,7 +341,7 @@ fbOverlay.addEventListener('click', (e) => {
 });
 
 // ══════════════════════════════════════════════════════════════════
-// 8. Theme Switcher
+// 5. Theme Switcher
 // ══════════════════════════════════════════════════════════════════
 (function() {
     const themes = [
